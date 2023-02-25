@@ -1,0 +1,23 @@
+img {
+    width: 300px;
+}
+.FIO-PHOTO {
+    border-radius: 15px;
+    position: absolute;
+    margin-left: 365px;
+}
+body {
+background-color: rgb(243, 151, 243);
+}
+h1 {
+    color: rgb(235, 41, 147);
+}
+h3 {
+    color: rgb(235, 41, 147);
+}
+b {
+    color: blueviolet;
+}
+td {
+    color: aliceblue;
+}

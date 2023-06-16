@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT4_1</title>
+</head>
+<body>
+    <script>
+        function change() {
+            A = Number(document.first_form.A.value)
+            B = Number(document.first_form.B.value)
+            N = Number(document.first_form.select1.value)
+            switch (N) {
+                case 1:
+                    A += B
+                    break;
+                case 2:
+                    A -=B
+                    break;
+                case 3:
+                    A *= B
+                    break;
+                case 4:
+                    A /= B
+                    break;
+            }
+            alert(`Результат: ${A}`);
+        }  
+        </script>
+
+    <form name="first_form">
+        Выполнить действие
+        <select name="select1">
+            <option value="1">сумма</option>
+            <option value="2">разность</option>
+            <option value="3">умножение</option>
+            <option value="4">деление</option>
+        </select>
+        <br><br>
+        <input type="number" name="A">
+        <input type="number" step="1" name="B">
+        <input type="submit" onclick="change()" value="Вычислить">
+    </form>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT5_3</title>
+</head>
+<body>
+    <form name="stars">
+        <input type="number" name="count_stars" id="count_stars" onchange="printStars()">
+    </form>
+    <div id="output"></div>
+    <br>
+    <br>
+    <p><b>
+        Определение дохода за квартал
+    </b></p>
+    <form name="quartal"></form>
+    <table>
+        <tr>
+            <td>
+                <label for="month1">Первый месяц</label>
+            </td>
+            <td>
+                <input type="number" id="m1" name="month1">
+            </td>
+        </tr>
+    <tr>
+        <td>
+            <label for="month2">Второй месяц</label>
+        </td>
+        <td>
+            <input type="number" id="m2" name="month2">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="month3">Третий месяц</label>
+        </td>
+        <td>
+            <input type="number" id="m3" name="month3">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="quartalResults()">Вычислить</button>
+        </td>
+    </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>Сумма за квартал</td>
+            <td id="sumQuart"></td>
+        </tr>
+        <tr>
+            <td>Налог</td>
+            <td id="nalog"></td>
+        </tr>
+        <tr>
+            <td>Сумма на руки</td>
+            <td id="hands"></td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<script>
+    //1
+    function returnPerimeterSquare(lenght, height) {
+        return {
+            'Perimetr': (lenght+height)*2,
+            'Square': (lenght*height)
+        }
+    }
+
+    console.log(returnPerimeterSquare(2, 3))
+
+    //2
+    function factorial(n) {
+        if (n < 0)
+            return - 1;
+        else if (n == 0)
+            return 1;
+
+        else {
+            return (n * factorial(n-1));
+        }
+    }
+
+    function sumofFactorial(a, b) {
+        sum = 0
+        for (let i = a; i <= b; i++) {
+            sum += factorial(i)
+        }
+        return sum
+    }
+
+    console.log(sumofFactorial(5, 6))
+
+    //3
+    function printStars() {
+        stars_print = "*".repeat(Number(document.getElementById("count_stars").value))
+        console.log(stars_print)
+        document.getElementById("output").innerHTML = stars_print
+    }
+
+    //4
+    function quartalResults() {
+        m1 = Number(document.getElementById("m1").value)
+        m2 = Number(document.getElementById("m2").value)
+        m3 = Number(document.getElementById("m3").value)
+        sumQuartal = m1 + m2 + m3
+        nalog = sumQuartal*0.13
+        sumHands = sumQuartal - nalog
+        console.log(sumHands)
+        document.getElementById("sumQuart").innerHTML = `<input type="text" name="sumQuart" id="sumQuart" value=${sumQuartal}>`
+        document.getElementById("nalog").innerHTML = `<input type="text" name="nalog" id="nalog" value=${nalog}>`
+        document.getElementById("hands").innerHTML = `<input type="text" name="hands" id="hands" value=${sumHands}>`
+    }
+</script>

@@ -1,0 +1,62 @@
+<script>
+    function funcForm() {
+        let type_figure = document.jsform.tfigure.value;
+        let color_figure = document.jsform.cfigure.value;
+        alert(`Мне нравится геометрическая фигура с цветом ${color_figure}
+        Длина фигуры ${type_figure.length}`)
+    };
+
+function confirm_named() {
+    alert('Внимательно вводи своё имя!')
+}
+
+function user_choice1() {
+    data = mor.value
+    alert(`Вы выбрали ${data}`)
+}
+
+function user_choice2() {
+    data = choc.value
+    alert(`Вы выбрали ${data}`)
+}
+
+function confirm() {
+    alert('Спасибо за участие в опросе!!!')
+}
+</script>
+
+<form name="jsform">
+    <table>
+        <tr>
+            <td>Фигура</td>
+            <td><input type="text" name="tfigure"></td>
+        </tr>
+        <tr>
+            <td>Цвет фигуры</td>
+            <td><input type="text" name="cfigure"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Мне нравится" onclick="funcForm()"></td>
+        </tr>
+    </table>
+</form>
+<br><br><br>
+<form name="jsform2">
+    <tr>
+        <td>Имя</td>
+        <td><input type="text" name="name2" onclick="confirm_named()"></td>
+    </tr>
+    <tr>
+        <tr>
+            <td>Мороженное</td>
+            <td><input type="checkbox" id= "mor" name="choice_food" value="Мороженное" onclick="user_choice1()"></td>
+        </tr>
+        <tr>
+            <td>Шоколад</td>
+            <td><input type="checkbox" id = "choc" name="choice_food" value="Шоколад" onclick="user_choice2()"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Подтвердить" onclick="confirm()"></td>
+        </tr>
+    </tr>
+</form>

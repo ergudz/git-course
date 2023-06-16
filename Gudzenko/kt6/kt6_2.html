@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT6_3</title>
+</head>
+<body>
+    <form name="subscribe">
+        <table>
+            <tr>
+                <td>
+                    <label for="timeSubscribe">Введите срок подписки</label>
+                </td>
+                <td>
+                    <select onclick="SubscribeGetCount()" name="timeSubscribe" id="countMonth">
+                    <option value="1">1</option>
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="resData">Стоимость подписки</label>
+                </td>
+                <td id="fin">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="reset" onclick="ResetArea()" name="resData">Сбросить</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function SubscribeGetCount() {
+            CountMounth = Number(document.subscribe.timeSubscribe.value)
+            price = 0
+            switch (CountMounth) {
+                case 1:
+                    price = 60
+                    break;
+                case 3:
+                    price = 168
+                    break;
+                case 6:
+                    price = 312
+                    break;
+                case 12:
+                    price = 540
+                    break;
+            }
+            document.getElementById("fin").innerHTML = `<input type="text" name="fin" id="fin" value=${price}>`
+        }
+
+        function ResetArea() {
+            document.getElementById("fin").innerHTML = `<input type="text" name="fin" id="fin">`
+        }
+    </script>
+</body>
+</html>

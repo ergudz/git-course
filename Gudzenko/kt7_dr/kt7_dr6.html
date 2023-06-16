@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kt7_6</title>
+</head>
+<body>
+    <script>
+        function endDay() {
+            date = new Date().getTime()
+            date_end = new Date()
+            date_end.setHours(0, 0, 0, 0)
+            date_end.setDate(date_end.getDate()+1)
+            return (date_end - date) /1000
+        }
+        console.log(endDay())
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KT5_1</title>
+</head>
+<body>
+    <script>
+        var str = 'Содержание'
+        var words = [
+            `${str.substring(2, 4).split("").reverse().join("") + str.substring(6, 7)}`, //еда
+            `${str.substring(2, 3) + str.substring(5, 6) + str.substring(8, 9) + str.substring(7, 8)}`, //джин
+            `${str.substring(1, 3) + str.substring(7, 8) + str.substring(6, 7)}`, //одна
+            `${str.substring(2, 3) + str.substring(4, 5) + str.substring(6, 7) + str.substring(5, 6) + str.substring(3, 4)}`, //драже
+            `${str.substring(0, 2).split("").reverse().join("").toLowerCase()+str.substring(2, 4).split("").reverse().join("")+str.substring(6, 10)}` //оседание
+        ]
+
+        console.log(words)
+    </script>
+</body>
+</html>

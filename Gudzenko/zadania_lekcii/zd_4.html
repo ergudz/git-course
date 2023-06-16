@@ -1,0 +1,16 @@
+<script>
+    function set_color() {
+        data = document.color_change.color_select.value
+        document.body.style.background = data;
+    }
+</script>
+<form name="color_change">
+    <select name="color_select" onchange="set_color()">
+    <option value="red">Красный</option>
+    <option value="green">Зелёный</option>
+    <option value="white">Белый</option>
+    <option value="black">Черный</option>
+    <option value="blue">Голубой</option>
+    <option value="pink">Розовый</option>
+    </select>
+</form>

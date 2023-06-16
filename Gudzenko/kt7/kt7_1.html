@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kt7_1</title>
+</head>
+<body>
+    <h1>
+        Форма ввода и проверки данных
+    </h1>
+
+    <form name="checkform">
+        <h4>
+            Введите номер телефона:
+            <input type="text" name="phoneNumber" id="phoneNumber">
+            <br><br>
+            Введите свои ФИО:
+            <input type="text" name="FIO" id="FIO">
+        </h4>
+        <button type="button" onclick="checkCorrectData()">Проверить</button>
+    </form>
+    <script>
+        function checkCorrectData() {
+            number = document.checkform.phoneNumber.value
+            FIO = document.checkform.FIO.value
+            let testPhoneRegexp = /[\d]{4}-[\d]{3}-[\d]{2}-[\d]{2}/gm;
+            let testFIORegexp = /[А-я]+\s[А-я]+\s[А-я]+/gm;
+            console.log()
+            if (number.match(testPhoneRegexp) == null) {
+                alert("Введите корректный номер по формату: XXXX-XXX-XX-XX")
+            } else {
+                console.log(number)
+            };
+            if (FIO.match(testFIORegexp) == null) {
+                alert("Введите корректный ФИО по формату: Иванов Иван Иванович")
+            } else {
+                console.log(FIO)
+            };
+        }
+    </script>
+</body>
+</html>
